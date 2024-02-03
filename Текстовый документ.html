@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+
+        body{
+            font-family: 'IBM Plex Mono', monospace;
+            flex-direction: column;
+            background-color:rgb(229, 229, 229);
+        }
+        
+        .calc_n_lock{
+            display: flexbox;
+            
+            flex-direction: column;
+            
+            margin-top: 30px;
+
+
+        }
+        .calc_panel{
+            border-radius: 20px;
+            background: linear-gradient(rgb(77, 77, 77), black);;
+            height: 650px;
+            width: 360px;
+            color: rgb(255, 255, 255);
+            flex-direction: column;
+            margin: auto;
+        }
+        .calc_pic{
+           margin-top: 25px;
+           width: 250px;
+           margin-left: 10%;
+
+            
+        }
+        .calc_win{
+            margin-top: 30px;
+            background-color: rgb(255, 255, 255);
+            color: black;
+            width: 300px;
+            margin-left: 30px;
+            border-radius: 20px;
+            text-align: center;
+            flex-direction: column;
+            margin-bottom: 30px;
+            height: 450px;
+            display: flex;
+            justify-content: space-around;
+
+        }
+        .transition{
+            
+            margin-left: -10px;
+            flex-direction: column;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            text-align: start; 
+            margin-left: 20px; 
+            margin-bottom: -15px;
+            font-weight: bold;
+            
+            
+            
+        }
+        .Val_in{
+            
+            height: 50px;
+            margin-left: 10%;
+            margin-right: 10%;
+            width: 250px;
+            border-radius: 5px;
+            border-color:black;
+            border-width: 2px;
+            margin-left: 20px;
+        }
+        .Val_out{
+            
+            height: 50px;
+            margin-left: 20px;
+           
+            width: 250px;
+            border-radius: 5px;
+            border-color:black;
+            border-width: 2px;
+            
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@1&family=Roboto:wght@800&display=swap');
+        .calc_txt{
+            font-family: 'Roboto', sans-serif;
+            font-size: 17px;
+        }
+        .send_button{
+            width: 250px;
+
+
+        }
+        .calc_pic_mmt{
+            width: 110px;
+            position:absolute;
+            right: 0;
+            margin-right: 60px;
+            margin-top: 30px;
+            
+        }
+        
+        .nav{
+            flex-direction: row;
+        }
+        .t_icon{
+            width:26px
+        }
+        .t_num{
+            width: 200px;
+            margin-bottom: 5px;
+        }
+        .logo{
+            width:150px;
+        }
+        .logo_t{
+            width: 120px;
+        }
+        .line{
+            width: 60px;
+            margin-bottom: 5px;
+        }
+        .geo_pic{
+            width: 360px;
+            
+            margin-top: 15px;
+        }
+        .arrow{
+            width: 50px;
+            border-radius: 5px;
+            margin-top: -30px;
+            margin-left: 155px;
+        }
+        .geo_txt{
+            width: 200px;
+            margin-left: 85px;
+            margin-top: 10px;
+        }
+        .map{
+            width: 330px;
+            margin-left: 15px;
+            margin-top: 15px;
+        }
+        .point{
+            width: 30px;
+            margin-left: 15px;
+            margin-bottom: -10px;
+        }
+        .adress{
+            padding-bottom: 30px;
+            font-size: 18px;
+            width: 200px;
+        }
+        .line-2{
+            width:50px;
+            margin-left: 140px;
+        }
+        .geo_video{
+            width: 300px;
+            height: 300px;
+            margin-left: 25px;
+            margin-top: 20px;
+        }
+        .client_txt{
+            width: 200px;
+            margin-left: 85px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .cl_txt_1{
+            margin-top: 150px;
+            margin-left: 50px;
+            position: absolute;
+            width: 250px;
+        }
+        .cl_txt_2{
+            margin-top: 250px;
+            margin-left: 50px;
+            position: absolute;
+            width: 250px;
+        }
+        .team{
+            flex-direction: row;
+            justify-content: space-around;
+            width: 330px;
+            margin:auto
+
+        }
+        .wkr_1{
+            width: 150px;
+            margin-top: 20px;
+            margin-left: 5px;
+        }
+        .wkr_2{
+            width: 150px;
+            margin-left: 5px;
+        }
+        .wkr_3{
+            width: 80px;
+            margin-left: 5px;
+        }
+        .wkr_desc{
+            width: 150px;
+            font-size: 14px;
+            border-radius: 5px;
+            margin-left: 5px;
+
+        }
+        .wkr_desc1{
+            width: 150px;
+            font-size: 14px;
+            border-radius: 5px;
+            margin-left: 5px;
+
+        }
+        .geo{
+            border-radius: 20px;
+            height: auto;
+            width: 360px;
+            flex-direction: column;
+            margin: auto;
+        }
+        .tre{
+            width: 150px;
+        }
+        .commit{
+            margin-top: 20px;
+            width: 150px;
+            margin-left: 20px;
+        }
+        .partner{
+            border-radius: 20px;
+            background: linear-gradient(rgb(77, 77, 77), black);;
+            height: auto;
+            width: 360px;
+            color: rgb(255, 255, 255);
+            flex-direction: column;
+            margin: auto;
+        }
+        .part_pic{
+            width: 287px;
+            margin-top: 20px;
+            margin-left: 35px;
+        }
+    </style>
+</head>
+<body>
+        <img src="https://thumb.tildacdn.com/tild3131-3462-4765-a439-346330363036/-/cover/50x50/center/center/-/format/webp/2b61d242-f14c-445a-a.png" alt="" class="t_icon">
+        <img src="https://thumb.tildacdn.com/tild3031-6434-4664-b466-323666656431/-/cover/376x28/center/center/-/format/webp/a1d1239f-b99f-4327-8.png" alt="" class="t_num">
+        <img src="https://thumb.tildacdn.com/tild3438-6533-4137-b135-656337616166/-/cover/242x50/center/center/-/format/webp/e345f660-f161-4f4b-a.png" alt="" class="logo">
+        <img src="https://thumb.tildacdn.com/tild6531-3238-4336-b537-303565353635/-/cover/200x60/center/center/-/format/webp/Groupfewf_39.png" class="logo_t">
+        <img src="https://thumb.tildacdn.com/tild3734-3730-4732-a532-366466396638/-/cover/82x20/center/center/-/format/webp/8ffe5104-5117-4e7a-9.png" class="line">
+        
+        
+    </div>
+    <div class="calc_n_lock">
+        <div class='calc_panel'>
+            <div class="ph_calc">
+                <img src="https://static.tildacdn.com/tild3437-6236-4764-a338-313930636632/26115f7d-d67a-42b5-8.png" class = 'calc_pic'>
+                <img src="https://static.tildacdn.com/tild3337-3139-4566-a632-616566323335/1078505b-d58f-42b6-a.png" class = 'calc_pic_mmt'>
+            </div>
+            <div class="calc_win">
+                <div class = 'transition'>
+                    <a class="tr_txt">Направление перевода:</a>
+                </div>
+                
+                    <input type="number" id="val" class="Val_out" placeholder="введите сумму..."/>
+                    <div class = 'transition'>
+                        <a class="tr_txt">Конвертировать из:</a>
+                    </div>
+                    <select id="cur1" class="Val_out">
+                        <option>USD</option>
+                        <option>EUR</option>
+                        <option>RUB</option>
+                    </select>
+                
+                    <div class = 'transition'>
+                        <a class="tr_txt">Конвертировать в:</a>
+                    </div>
+                
+                    <select id="cur2" class="Val_out">
+                        <option>USD</option>
+                        <option>EUR</option>
+                        <option>RUB</option>
+                    </select>
+                
+                
+                <div class="calc_txt" style="text-align: start; margin-left: 25px; margin-bottom: -15px;">Итого вы получите:</div>
+                <div class="convert_result" style="text-align: start; margin-left: 25px;">= 00,000</div>
+                <div class="calc_txt" style="font-weight: bold; margin-bottom: -15px;">Хотите лучший курс?</div>
+                <div class="calc_txt" style="font-size: 15px">Напишите оператору!</div>
+                <div>
+                    <img class="send_button" src="https://static.tildacdn.com/tild3865-6166-4466-b463-353439343138/4320e56c-f3ef-49ff-b.png" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="calc_n_lock">
+        <div class='geo'>
+            <div class="calc_n_lock">
+                <img src="https://thumb.tildacdn.com/tild6462-3336-4539-b963-316431656238/-/format/webp/3ca6485f-7b20-4f43-b.png" class="geo_pic">
+                <img src="https://thumb.tildacdn.com/tild3435-6630-4430-a139-646436323737/-/cover/192x192/center/center/-/format/webp/fe796f84-4e4c-4cd7-8.png" class="arrow">
+                <img src="https://thumb.tildacdn.com/tild3431-6463-4666-a230-633465396535/-/resize/184x/-/format/webp/__.png" class="geo_txt">
+                <img src="https://static.tildacdn.com/tild6430-6535-4539-b863-613332353436/d4aa9568-538b-4286-8.png" class="map">
+                <img src="https://static.tildacdn.com/tild3230-6465-4163-a535-356261643833/826313c5-f53c-4e47-9.png" class="point">
+                <a class="adress">Адрес:</a>
+                <img src="https://static.tildacdn.com/tild3961-6466-4735-b638-346465663237/ed68e408-904b-4358-a.png" class="line-2">
+                <div class="map"><a>Kemankeş, Karamustafa Paşa Mаh. Halilpaşa Sk. No:14 İç  kapı No:19 Beyoğlu/İstanbul</a></div>
+                <img class="geo_video" src="https://static.tildacdn.com/tild6664-6637-4564-b938-626165316236/image_52.png">  
+                <div class="clients">
+        <img src="https://static.tildacdn.com/tild6133-3065-4331-a338-313635633038/_.png" class="client_txt">
+        <div class="client_txt"><a>Мы решаем и простые, и сложные задачи</a></div>
+        
+        <div class="cl_block1">
+            <img src="https://thumb.tildacdn.com/tild3432-3261-4336-a465-353734623234/-/cover/478x160/center/center/-/format/webp/d77c0fdb-2af3-4922-9.png" class="cl_txt_1">
+            <div class="cl_txt_2">Денежные переводы, организация приема оплат картами РФ</div>
+            <img src="https://thumb.tildacdn.com/tild3964-3738-4531-b532-363461323730/-/resize/666x/-/format/webp/image.png" class="geo_pic">
+        </div>
+        <div class="cl_block1">
+            <img src="https://thumb.tildacdn.com/tild6465-6637-4033-b131-373862396532/-/cover/476x110/center/center/-/format/webp/58d77896-eed6-4489-a.png" class="cl_txt_1">
+            <div class="cl_txt_2">Факторинг, займы для бизнеса</div>
+            <img src="https://thumb.tildacdn.com/tild6635-6130-4664-a633-376137616565/-/resize/666x/-/format/webp/image.png" class="geo_pic">
+        </div>
+        <div class="cl_block1">
+            <img src="https://thumb.tildacdn.com/tild6537-3936-4938-a661-323133396136/-/cover/404x110/center/center/-/format/webp/1e837aa1-18fb-4c9b-8.png" class="cl_txt_1">
+            <div class="cl_txt_2">Денежные переводы, расчеты с поставщиками, представительство в Стамбуле</div>
+            <img src="https://thumb.tildacdn.com/tild3337-3063-4463-b530-333536323035/-/resize/666x/-/format/webp/image.png" class="geo_pic">
+        </div>
+        <div class="cl_block1">
+            <img src="https://thumb.tildacdn.com/tild6537-3936-4938-a661-323133396136/-/cover/404x110/center/center/-/format/webp/1e837aa1-18fb-4c9b-8.png" class="cl_txt_1">
+            <div class="cl_txt_2">Денежные переводы, покупки в магазинах, помощь и консультации</div>
+            <img src="https://thumb.tildacdn.com/tild6231-6338-4938-a236-383861353033/-/resize/666x/-/format/webp/photo.png" class="geo_pic">
+        </div>
+    </div>
+    <img src="https://thumb.tildacdn.com/tild3931-3132-4236-b735-373261616263/-/cover/630x100/center/center/-/format/webp/ed5085b0-c480-4a66-9.png" class="geo_txt">
+    <div class="team">
+        <img src="https://static.tildacdn.com/tild3462-6639-4233-a430-623431663939/209ecd6c-a9b9-4226-b.png" class="wkr_1">
+        <img src="https://static.tildacdn.com/tild3535-3763-4435-a263-623538633666/0a47fd89-be63-483b-b.png" class="wkr_1">
+        <img src="https://thumb.tildacdn.com/tild6131-6634-4964-a436-393736653164/-/cover/270x46/center/center/-/format/webp/ba137b28-b302-438b-8.png" class="wkr_2">
+        <img src="https://thumb.tildacdn.com/tild3233-3761-4964-b337-316262336363/-/cover/122x46/center/center/-/format/webp/b1b86417-1e99-4526-a.png" style="width:70px; margin-left: 10px;">
+        <img src="./2024-01-15_22-11-23.png" class="wkr_desc">
+        <img src="./2024-01-15_22-12-37.png" class="wkr_desc1">
+        <img src="https://static.tildacdn.com/tild6635-3631-4435-b334-636463386439/1c23239e-ec8b-456c-8.png" class="wkr_1">
+        <img src="https://static.tildacdn.com/tild3761-3137-4134-b731-393338316336/85477cae-bbc4-4049-9.png" class="wkr_1">
+        <img src="https://static.tildacdn.com/tild3066-3962-4961-a436-633936356164/fa56cc34-cd65-4813-b.png" class="wkr_3">
+        <img src="https://static.tildacdn.com/tild3631-6532-4931-b461-366662623536/47f70b25-0dcd-4851-a.png" style="width:90px; margin-left: 80px;">
+        <img src="2024-01-15_22-27-15.png" class="wkr_desc">
+        <img src="2024-01-15_22-28-51.png" class="wkr_desc1">
+
+            </div>
+        <img src="https://thumb.tildacdn.com/tild3265-6134-4233-a333-646136363563/-/cover/273x68/center/center/-/format/webp/b74c1e68-5b48-45b6-9.png" class="geo_txt">
+        <img src="https://static.tildacdn.com/tild3063-6131-4764-b436-646662353330/Group_40.png" class="commit">
+        <img src="https://static.tildacdn.com/tild6365-6335-4331-a431-303633393363/Group_41.png" class="commit">
+        <img src="https://static.tildacdn.com/tild6164-3437-4861-a430-373961343230/Group_42.png" class="commit">
+        <div class="partner">
+            <img src="https://static.tildacdn.com/tild3236-3836-4636-a263-333035323733/_.png" class="part_pic">
+            <img src="https://static.tildacdn.com/tild3630-3761-4163-b635-663339336632/b360a11a-c7a8-4c84-9.png" class="part_pic">
+            <img src="https://static.tildacdn.com/tild3263-3739-4461-b331-343830363862/79734a29-d859-4244-9.png" class="part_pic">
+            <img src="https://static.tildacdn.com/tild3633-6433-4839-b061-366535323563/fb749bee-18d0-439e-8.png" class="part_pic">
+            <img src="https://static.tildacdn.com/tild3837-3361-4036-b563-386638393463/0bc25309-e856-45ab-8.png" class="part_pic">
+            <img src="https://static.tildacdn.com/tild3761-6130-4433-b134-663638373135/9546c95d-70f8-4de5-8.png" class="part_pic">
+        </div>
+        </div>
+    </div>
+
+
+    <script>window.onload = function () {
+        let c = {'USD':'78', 'EUR':'85.60', 'RUB':'1'}; // Устанавливаем курс валют
+    
+        let val = document.getElementById('val'); // Получаем элемент ввода данных
+        let currency1 = document.getElementById('cur1'); // Получаем первый селект
+        let currency2 = document.getElementById('cur2'); // Получаем второй селект
+        let result = document.getElementsByClassName('convert_result')[0]; // Получаем поле куда будем писать результат
+        function summ() { // Делаем функцию
+            let z = 0;
+            if(currency1.value === currency2.value){ // Если оба значения в селектах равны
+                result.innerText = val.value; // То просто вписываем данные из поля ввода
+            } else {
+                if(currency1.value != 'RUB'){ // Если не равны рублю, то
+                    z = val.value*c[currency1.value]; // Переводим сумму в рубли
+                    result.innerHTML = Math.ceil((z/c[currency2.value])*100)/100; // Делим на курс и округляем до сотых
+                } else { // Если не равны
+                    result.innerHTML = Math.ceil((val.value*c[currency2.value])*100)/100; // Умножаем на курс и округляем до сотых
+                }
+            }
+        }
+        val.oninput = function () { // При вводе данных в поле вызываем функцию.
+            summ();
+        };
+        currency1.onchange = function () { // При смене первого селекта вызываем функцию.
+            summ();
+        };
+        currency2.onchange = function () { // При смене второго селекта вызываем функцию.
+            summ();
+        }
+    }</script>
+</body>
+</html>
