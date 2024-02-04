@@ -274,7 +274,7 @@
                     <a class="tr_txt">Направление перевода:</a>
                 </div>
                 
-                    <input type="number" id="val" class="Val_out" placeholder="введите сумму..."/>
+                    <input type="text" onkeypress="return /[0-9]/i.test(event.key)" id="val" class="Val_out" placeholder="введите сумму..."/>
                     <div class = 'transition'>
                         <a class="tr_txt">Конвертировать из:</a>
                     </div>
