@@ -398,7 +398,7 @@
                     z = val.value*c[currency1.value]; // Переводим сумму в рубли
                     result.innerHTML = (Math.ceil((z/c[currency2.value])*100)/100).toString() + '    ' + currency2.value; // Делим на курс и округляем до сотых
                 } else { // Если не равны
-                    result.innerHTML = (Math.ceil((val.value*c[currency2.value])*100)/100).toString + '    ' + currency2; // Умножаем на курс и округляем до сотых
+                    result.innerHTML = (Math.ceil((val.value*c[currency2.value])*100)/100).toString() + '    ' + currency2.value; // Умножаем на курс и округляем до сотых
                 }
             }
         }
