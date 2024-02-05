@@ -7,20 +7,22 @@
     <style>
 
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
-    @media (prefers-color-scheme: dark) {
-    .body.adaptive {
-    background-color: rgb(46 44 44);
-  }}
+  @media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: rgb(46 44 44);
+    --text-color:  rgb(229 229 226);
+  }
+}
   @media (prefers-color-scheme: light) {
-  .body.adaptive {
-    background-color:rgb(229, 229, 229);
+    :root {
+    --background-color: rgb(229 229 226);
+    --text-color: rgb(46 44 44);
   }
 }
         body{
             font-family: 'IBM Plex Mono', monospace;
             flex-direction: column;
-            margin: 0;
-            padding: 0;
+            background-color: var(--background-color);
         }
         
         .calc_n_lock{
@@ -35,7 +37,7 @@
         .calc_panel{
             border-radius: 20px;
             background: linear-gradient(rgb(77, 77, 77), black);;
-            height: 650px;
+            height: 750px;
             width: 360px;
             color: rgb(255, 255, 255);
             flex-direction: column;
@@ -58,7 +60,7 @@
             text-align: center;
             flex-direction: column;
             margin-bottom: 30px;
-            height: 450px;
+            height: 550px;
             display: flex;
             justify-content: space-around;
 
@@ -159,6 +161,7 @@
             width: 330px;
             margin-left: 15px;
             margin-top: 15px;
+            color: var(--text-color);
         }
         .point{
             width: 30px;
@@ -169,6 +172,7 @@
             padding-bottom: 30px;
             font-size: 18px;
             width: 200px;
+            color: var(--text-color);
         }
         .line-2{
             width:50px;
@@ -185,18 +189,21 @@
             margin-left: 85px;
             margin-top: 10px;
             text-align: center;
+            color: var(--text-color);
         }
         .cl_txt_1{
             margin-top: 150px;
             margin-left: 50px;
             position: absolute;
             width: 250px;
+            color: var(--text-color);
         }
         .cl_txt_2{
             margin-top: 250px;
             margin-left: 50px;
             position: absolute;
             width: 250px;
+            color: var(--text-color);
         }
         .team{
             flex-direction: row;
@@ -261,7 +268,22 @@
             margin-top: 20px;
             margin-left: 35px;
         }
+        
+
+        button{
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background-image:" sync_alt_FILL0_wght400_GRAD0_opsz24.png";
+            background-color: rgba(46, 219, 127, 0.673);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+
     </style>
+
 </head>
 <body>
         <img src="https://thumb.tildacdn.com/tild3131-3462-4765-a439-346330363036/-/cover/50x50/center/center/-/format/webp/2b61d242-f14c-445a-a.png" alt="" class="t_icon">
@@ -283,7 +305,7 @@
                     <a class="tr_txt">Направление перевода:</a>
                 </div>
                 
-                    <input type="text" onkeypress="return /[0-9]/i.test(event.key)" id="val" class="Val_out" placeholder="введите сумму..."/>
+                    <input type="number" id="val" class="Val_out" placeholder="введите сумму..."/>
                     <div class = 'transition'>
                         <a class="tr_txt">Конвертировать из:</a>
                     </div>
@@ -292,7 +314,13 @@
                         <option>EUR</option>
                         <option>RUB</option>
                     </select>
-                
+                    
+                        <button id="exchange">
+                            <img src="./sync_alt_FILL0_wght400_GRAD0_opsz24.png">
+                            
+                        </button>
+                        
+
                     <div class = 'transition'>
                         <a class="tr_txt">Конвертировать в:</a>
                     </div>
@@ -333,22 +361,22 @@
         
         <div class="cl_block1">
             <img src="https://thumb.tildacdn.com/tild3432-3261-4336-a465-353734623234/-/cover/478x160/center/center/-/format/webp/d77c0fdb-2af3-4922-9.png" class="cl_txt_1">
-            <div class="cl_txt_2">Денежные переводы, организация приема оплат картами РФ</div>
+            <div class="cl_txt_2" style="color: black;">Денежные переводы, организация приема оплат картами РФ</div>
             <img src="https://thumb.tildacdn.com/tild3964-3738-4531-b532-363461323730/-/resize/666x/-/format/webp/image.png" class="geo_pic">
         </div>
         <div class="cl_block1">
             <img src="https://thumb.tildacdn.com/tild6465-6637-4033-b131-373862396532/-/cover/476x110/center/center/-/format/webp/58d77896-eed6-4489-a.png" class="cl_txt_1">
-            <div class="cl_txt_2">Факторинг, займы для бизнеса</div>
+            <div class="cl_txt_2" style="color: black;">Факторинг, займы для бизнеса</div>
             <img src="https://thumb.tildacdn.com/tild6635-6130-4664-a633-376137616565/-/resize/666x/-/format/webp/image.png" class="geo_pic">
         </div>
         <div class="cl_block1">
             <img src="https://thumb.tildacdn.com/tild6537-3936-4938-a661-323133396136/-/cover/404x110/center/center/-/format/webp/1e837aa1-18fb-4c9b-8.png" class="cl_txt_1">
-            <div class="cl_txt_2">Денежные переводы, расчеты с поставщиками, представительство в Стамбуле</div>
+            <div class="cl_txt_2" style="color: black;">Денежные переводы, расчеты с поставщиками, представительство в Стамбуле</div>
             <img src="https://thumb.tildacdn.com/tild3337-3063-4463-b530-333536323035/-/resize/666x/-/format/webp/image.png" class="geo_pic">
         </div>
         <div class="cl_block1">
             <img src="https://thumb.tildacdn.com/tild6537-3936-4938-a661-323133396136/-/cover/404x110/center/center/-/format/webp/1e837aa1-18fb-4c9b-8.png" class="cl_txt_1">
-            <div class="cl_txt_2">Денежные переводы, покупки в магазинах, помощь и консультации</div>
+            <div class="cl_txt_2" style="color: black;">Денежные переводы, покупки в магазинах, помощь и консультации</div>
             <img src="https://thumb.tildacdn.com/tild6231-6338-4938-a236-383861353033/-/resize/666x/-/format/webp/photo.png" class="geo_pic">
         </div>
     </div>
@@ -391,6 +419,7 @@
         let currency1 = document.getElementById('cur1'); // Получаем первый селект
         let currency2 = document.getElementById('cur2'); // Получаем второй селект
         let result = document.getElementsByClassName('convert_result')[0]; // Получаем поле куда будем писать результат
+        let but = document.getElementById('myspan');
         function summ() { // Делаем функцию
             let z = 0;
             if(currency1.value === currency2.value){ // Если оба значения в селектах равны
@@ -403,6 +432,15 @@
                     result.innerHTML = (Math.ceil((val.value*c[currency2.value])*100)/100).toString() + '    ' + currency2.value; // Умножаем на курс и округляем до сотых
                 }
             }
+        }
+        const exchange = document.getElementById('exchange');
+        exchange.addEventListener('click', () => {
+            const temp = currency1.value;
+            currency1.value = currency2.value;
+            currency2.value = temp;
+        });
+        exchange.onclick = function () { // При смене второго селекта вызываем функцию.
+            summ();
         }
         val.oninput = function () { // При вводе данных в поле вызываем функцию.
             summ();
