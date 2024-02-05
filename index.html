@@ -385,13 +385,13 @@
         function summ() { // Делаем функцию
             let z = 0;
             if(currency1.value === currency2.value){ // Если оба значения в селектах равны
-                result.innerText = val.value; // То просто вписываем данные из поля ввода
+                result.innerText = (val.value).toString() + '    ' + currency2.value ; // То просто вписываем данные из поля ввода
             } else {
                 if(currency1.value != 'RUB'){ // Если не равны рублю, то
                     z = val.value*c[currency1.value]; // Переводим сумму в рубли
-                    result.innerHTML = Math.ceil((z/c[currency2.value])*100)/100; // Делим на курс и округляем до сотых
+                    result.innerHTML = (Math.ceil((z/c[currency2.value])*100)/100).toString() + '    ' + currency2.value; // Делим на курс и округляем до сотых
                 } else { // Если не равны
-                    result.innerHTML = Math.ceil((val.value*c[currency2.value])*100)/100; // Умножаем на курс и округляем до сотых
+                    result.innerHTML = (Math.ceil((val.value*c[currency2.value])*100)/100).toString + '    ' + currency2; // Умножаем на курс и округляем до сотых
                 }
             }
         }
