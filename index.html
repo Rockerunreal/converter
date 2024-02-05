@@ -7,11 +7,18 @@
     <style>
 
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
-
+    @media (prefers-color-scheme: dark) {
+    .body.adaptive {
+    background-color: rgb(46 44 44);
+  }}
+  @media (prefers-color-scheme: light) {
+  .body.adaptive {
+    background-color:rgb(229, 229, 229);
+  }
+}
         body{
             font-family: 'IBM Plex Mono', monospace;
             flex-direction: column;
-            background-color:rgb(229, 229, 229);
         }
         
         .calc_n_lock{
