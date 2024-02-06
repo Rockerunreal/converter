@@ -443,7 +443,13 @@
             summ();
         }
         val.oninput = function () { // При вводе данных в поле вызываем функцию.
-            summ();
+            if (val.value == '') {
+                result.innerHTML = '00,000    ' + (currency2.value).toString();
+            }
+            else{
+                summ();
+            }
+            
         };
         currency1.onchange = function () { // При смене первого селекта вызываем функцию.
             summ();
