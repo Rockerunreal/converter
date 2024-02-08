@@ -433,9 +433,14 @@
             } else {
                 if(currency1.value != 'RUB'){ // Если не равны рублю, то
                     z = val.value*c[currency1.value]; // Переводим сумму в рубли
-                    result.innerHTML = (Math.ceil((z/c[currency2.value])*100)/100).toString() + '    ' + currency2.value; // Делим на курс и округляем до сотых
+                    if ( z == null ){
+                        result.innerHTML = '00,000    ' + currency2.value;
+                    }else{
+                        result.innerHTML = (Math.ceil((z/c[currency2.value])*100)/100).toString() + '    ' + currency2.value; // Делим на курс и округляем до сотых
+                    }
                 } else { // Если не равны
                     result.innerHTML = (Math.ceil((val.value*c[currency2.value])*100)/100).toString() + '    ' + currency2.value; // Умножаем на курс и округляем до сотых
+
                 }
             }
         }
@@ -458,10 +463,20 @@
             
         };
         currency1.onchange = function () { // При смене первого селекта вызываем функцию.
-            summ();
+            if (val.value == '') {
+                result.innerHTML = '00,000    ' + (currency2.value).toString();
+            }
+            else{
+                summ();
+            }
         };
         currency2.onchange = function () { // При смене второго селекта вызываем функцию.
-            summ();
+            if (val.value == '') {
+                result.innerHTML = '00,000    ' + (currency2.value).toString();
+            }
+            else{
+                summ();
+            }
         }
     }</script>
 </body>
