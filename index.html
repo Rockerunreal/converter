@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
   @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: rgb(46 44 44);
-    --text-color:  rgb(229 229 226);
+    --background-color: rgb(229 229 226);
+    --text-color:  rgb(46 44 44);
   }
       }
-  .geo_txt, .client_txt{
+ /* .geo_txt, .client_txt{
     -webkit-filter: invert(100%);
     filter: invert(100%);
   }
-}
+  */
+
   @media (prefers-color-scheme: light) {
     :root {
     --background-color: rgb(229 229 226);
@@ -36,8 +36,6 @@
             flex-direction: column;
             
             margin-top: 30px;
-
-
         }
         .calc_panel{
             border-radius: 20px;
@@ -52,7 +50,6 @@
            margin-top: 25px;
            width: 250px;
            margin-left: 10%;
-
             
         }
         .calc_win{
@@ -68,7 +65,6 @@
             height: 550px;
             display: flex;
             justify-content: space-around;
-
         }
         .transition{
             
@@ -114,8 +110,6 @@
         }
         .send_button{
             width: 250px;
-
-
         }
         .calc_pic_mmt{
             width: 110px;
@@ -215,7 +209,6 @@
             justify-content: space-around;
             width: 330px;
             margin:auto
-
         }
         .wkr_1{
             width: 150px;
@@ -235,14 +228,12 @@
             font-size: 14px;
             border-radius: 5px;
             margin-left: 5px;
-
         }
         .wkr_desc1{
             width: 150px;
             font-size: 14px;
             border-radius: 5px;
             margin-left: 5px;
-
         }
         .geo{
             border-radius: 20px;
@@ -274,21 +265,25 @@
             margin-left: 35px;
         }
         
-
         button{
             width: 40px;
             height: 40px;
             border-radius: 20px;
             background-image:" sync_alt_FILL0_wght400_GRAD0_opsz24.png";
-            background-color: rgba(46, 219, 127, 0.673);
+            background-color: #39f1b2;
             margin-left: auto;
             margin-right: auto;
         }
-
-
-
+        
+        .convert_result{
+            display: inline-block;
+            width: fit-content;
+        }
+        .convert{
+            display: inline-block;
+            width: fit-content;
+        }
     </style>
-
 </head>
 <body>
         <img src="https://thumb.tildacdn.com/tild3131-3462-4765-a439-346330363036/-/cover/50x50/center/center/-/format/webp/2b61d242-f14c-445a-a.png" alt="" class="t_icon">
@@ -310,7 +305,7 @@
                     <a class="tr_txt">Направление перевода:</a>
                 </div>
                 
-                    <input type="number" id="val" class="Val_out" placeholder="введите сумму..."/>
+                    <input type="number" id="val" class="Val_out" placeholder=" введите сумму..."/>
                     <div class = 'transition'>
                         <a class="tr_txt">Конвертировать из:</a>
                     </div>
@@ -325,7 +320,6 @@
                             
                         </button>
                         
-
                     <div class = 'transition'>
                         <a class="tr_txt">Конвертировать в:</a>
                     </div>
@@ -339,14 +333,16 @@
                 
                 
                 <div class="calc_txt" style="text-align: start; margin-left: 25px; margin-bottom: -15px;">Итого вы получите:</div>
-                <div class="convert_result" style="text-align: start; margin-left: 25px;">= 00,000 RUB</div>
+                <div class="convert_result1" style="text-align: start; margin-left: 25px; display:inline-block;">
+                    <div class="convert_result">0</div>
+                    <div class="convert" id="convert_result"></div> 
+                </div>
                 <div class="calc_txt" style="font-weight: bold; margin-bottom: -15px;">Хотите лучший курс?</div>
                 <div class="calc_txt" style="font-size: 15px">Напишите оператору!</div>
                 <div>
-                    <img class="send_button" src="https://static.tildacdn.com/tild3865-6166-4466-b463-353439343138/4320e56c-f3ef-49ff-b.png" alt="">
+                    <img class="send_button" href="tel:+905354436509" src="https://static.tildacdn.com/tild3865-6166-4466-b463-353439343138/4320e56c-f3ef-49ff-b.png" alt="">
                 </div>
             </div>
-
         </div>
     </div>
     <div class="calc_n_lock">
@@ -400,7 +396,6 @@
         <img src="https://static.tildacdn.com/tild3631-6532-4931-b461-366662623536/47f70b25-0dcd-4851-a.png" style="width:90px; margin-left: 80px;">
         <img src="2024-01-15_22-27-15.png" class="wkr_desc">
         <img src="2024-01-15_22-28-51.png" class="wkr_desc1">
-
             </div>
         <img src="https://thumb.tildacdn.com/tild3265-6134-4233-a333-646136363563/-/cover/273x68/center/center/-/format/webp/b74c1e68-5b48-45b6-9.png" class="geo_txt">
         <img src="https://static.tildacdn.com/tild3063-6131-4764-b436-646662353330/Group_40.png" class="commit">
@@ -416,9 +411,8 @@
         </div>
         </div>
     </div>
-
-
-    <script>window.onload = function () {
+    <script>
+        window.onload = function () {
         let c = {'USD':'78', 'EUR':'85.60', 'RUB':'1'}; // Устанавливаем курс валют
     
         let val = document.getElementById('val'); // Получаем элемент ввода данных
@@ -426,21 +420,18 @@
         let currency2 = document.getElementById('cur2'); // Получаем второй селект
         let result = document.getElementsByClassName('convert_result')[0]; // Получаем поле куда будем писать результат
         let but = document.getElementById('myspan');
+        let v = document.getElementById('convert_result')
+        v.innerHTML = currency2.value;
         function summ() { // Делаем функцию
             let z = 0;
             if(currency1.value === currency2.value){ // Если оба значения в селектах равны
-                result.innerText = (val.value).toString() + '    ' + currency2.value ; // То просто вписываем данные из поля ввода
+                result.innerText = (val.value) ; // То просто вписываем данные из поля ввода
             } else {
                 if(currency1.value != 'RUB'){ // Если не равны рублю, то
                     z = val.value*c[currency1.value]; // Переводим сумму в рубли
-                    if ( z == null ){
-                        result.innerHTML = '00,000    ' + currency2.value;
-                    }else{
-                        result.innerHTML = (Math.ceil((z/c[currency2.value])*100)/100).toString() + '    ' + currency2.value; // Делим на курс и округляем до сотых
-                    }
+                    result.innerHTML = (Math.ceil((z/c[currency2.value])*100)/100); // Делим на курс и округляем до сотых
                 } else { // Если не равны
-                    result.innerHTML = (Math.ceil((val.value*c[currency2.value])*100)/100).toString() + '    ' + currency2.value; // Умножаем на курс и округляем до сотых
-
+                    result.innerHTML = (Math.ceil((val.value*c[currency2.value])*100)/100); // Умножаем на курс и округляем до сотых
                 }
             }
         }
@@ -449,35 +440,26 @@
             const temp = currency1.value;
             currency1.value = currency2.value;
             currency2.value = temp;
-        });
-        exchange.onclick = function () { // При смене второго селекта вызываем функцию.
+            val.value = result.innerHTML;
+            v.innerHTML = currency2.value;
             summ();
-        }
+        });
         val.oninput = function () { // При вводе данных в поле вызываем функцию.
-            if (val.value == '') {
-                result.innerHTML = '00,000    ' + (currency2.value).toString();
-            }
-            else{
-                summ();
-            }
+            summ();
+            v.innerHTML = currency2.value;
+            
             
         };
         currency1.onchange = function () { // При смене первого селекта вызываем функцию.
-            if (val.value == '') {
-                result.innerHTML = '00,000    ' + (currency2.value).toString();
-            }
-            else{
-                summ();
-            }
+            summ();
+            v.innerHTML = currency2.value;
         };
         currency2.onchange = function () { // При смене второго селекта вызываем функцию.
-            if (val.value == '') {
-                result.innerHTML = '00,000    ' + (currency2.value).toString();
-            }
-            else{
-                summ();
-            }
+            summ();
+            v.innerHTML = currency2.value;
+
         }
-    }</script>
+    }
+    </script>
 </body>
 </html>
